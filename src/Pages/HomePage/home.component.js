@@ -4,7 +4,7 @@ import './home.styles.css';
 class Home extends Component {
   render() {
     return (
-      <div class="page">
+      <div className="page">
         <h3>Instructions</h3>
 
         <p>

@@ -11,9 +11,10 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "node -r dotenv/config bin/www.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "react-scripts start  \"NODE_PATH=./src\"",
+    "test": "react-scripts test --watch *.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

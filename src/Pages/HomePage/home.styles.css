@@ -2,3 +2,9 @@
   position: absolute;
   border: solid 1px black;
 }
+.theseButtons {
+  padding-top: 55vh;
+  padding-left: 8vw;
+  padding-bottom: 3vh;
+  z-index: 1;
+}
