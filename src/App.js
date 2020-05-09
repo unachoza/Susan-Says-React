@@ -4,12 +4,15 @@ import GamePage from 'Pages/GamePage/game.component';
 import ScorePage from 'Pages/ScorePage/ScorePage.component';
 import Button from 'Components/Buttons/Button.component.js';
 import 'Components/Buttons/button.styles.css';
+import Footer from 'Components/Footer/Footer.component';
+import {womensNames} from 'Constants/constants'
+
 
 class App extends Component {
   render() {
     return (
       <div className="game-container">
-        <HomePage />
+        {/* <HomePage /> */}
         <GamePage />
         <ScorePage />
         <div className="theseButtons">
@@ -23,6 +26,7 @@ class App extends Component {
             Play Again
           </Button>
         </div>
+        {/* <Footer womensNames={womensNames} /> */}
       </div>
     );
   }
