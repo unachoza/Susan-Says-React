@@ -2,6 +2,30 @@ import React, { Component } from 'react';
 import Button from 'Components/Buttons/Button.component';
 import 'Components/Buttons/button.styles.css';
 
+const buttons = [
+  {
+    dom: blue,
+    value: 1,
+  },
+  {
+    dom: green,
+    value: 2,
+  },
+  {
+    dom: purple,
+    value: 3,
+  },
+  {
+    dom: red,
+    value: 0,
+  },
+  {
+    dom: go,
+    value: 'go',
+  },
+];
+
+
 class GamePage extends Component {
   state = {
     susansColors: [],
