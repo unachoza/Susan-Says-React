@@ -42,11 +42,12 @@ class App extends Component {
     user = [];
   };
   render() {
+    const { curretPage } = this.state;
     return (
       <div className="game-container">
-        {/* <HomePage /> */}
-        <GamePage />
-        <ScorePage />
+        {curretPage === 'home' && <HomePage />}
+        {curretPage === 'gamePage' && <GamePage />}
+        {curretPage === 'scorePage' && <ScorePage />}
         <div className="theseButtons">
           <Button className="button" id="playbutton">
             Play Game
