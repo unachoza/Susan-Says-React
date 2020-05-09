@@ -1,0 +1,14 @@
+#page3 {
+  visibility: hidden;
+  top: 20vh;
+  left: 17vw;
+}
+.page {
+  position: absolute;
+  border: solid 1px black;
+}
+#display-score {
+  margin-top: 40px;
+  line-height: 1.6;
+  width: 28vw;
+}
