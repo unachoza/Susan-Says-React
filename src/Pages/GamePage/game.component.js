@@ -11,6 +11,7 @@ class GamePage extends Component {
     };
   }
   handleGo = () => {
+    const { susansColors } = this.state;
     console.log('go, we are going!');
     {
       /*pseudocode:
@@ -23,66 +24,59 @@ class GamePage extends Component {
     }
 
     this.addRandomColorToSequence();
-    this.clickColorButtons();
-    this.susanBlink();
+    this.susanBlink(susansColors);
   };
   addRandomColorToSequence = () => {
     let element = Math.floor(Math.random() * 4);
-    this.setState((prevState) => ({ susansColors: prevState.susansColors, ...element }));
+    console.log(element);
+    this.setState((prevState) => ({ susansColors: [...prevState.susansColors, element] }));
     console.log(this.state);
   };
 
   clickColorButtons = (e) => {
-    {
-      /*pseudocode:
-    onclick color needs to be added to userColors array
-    and trigger active animation
-    keep track of sequence lengths to trigger win logic when lengths are equal
-     */
-    }
-    console.log(e.target.value);
-    let value = e.target.value
-    this.setState(prevState => ({ usersColors: [...prevState.usersColors, value] }));
-    console.log(this.state);
-    // this.state.usersColors.push(buttons[i]['value']);
-    // this.winOrLoseAfter(this.state.susansColors, this.state.usersColors);
+    const { usersColors, susansColors } = this.state;
+    let value = e.target.value;
+    console.log(value);
+    this.setState((prevState) => ({ usersColors: [...prevState.usersColors, parseInt(value)] }));
+    if (usersColors.length === susansColors.length) this.winOrLoseAfter(susansColors, usersColors);
   };
 
   // pseudocode:
-  //    takes susansColors sequence and translates to which colors need to blink, loops through entire arr
+  //    takes susansColors sequence and translates to which colors need to blink
   susanBlink = (sequence) => {
-    for (let i = 0; i < sequence.length; i++) {
+    sequence.forEach((color, i) =>
       setTimeout(() => {
-        this.whichColorBlinks(sequence[i]);
-      }, i * 500);
-    }
+        this.whichColorBlinks(color);
+      }, i * 500)
+    );
   };
 
   // pseudocode:
   // translates sequences arr values to which colors blink
-  whichColorBlinks = (sequence) => {
-    switch (sequence) {
+  whichColorBlinks = (color) => {
+    switch (color) {
       case 0:
-        setTimeout(function () {
+        setTimeout(() => {
           document.getElementById('red').classList.remove('activeR');
         }, 400);
         break;
       case 1:
-        setTimeout(function () {
+        setTimeout(() => {
           document.getElementById('blue').classList.remove('activeB');
         }, 400);
         break;
       case 2:
-        setTimeout(function () {
+        setTimeout(() => {
           document.getElementById('green').classList.remove('activeG');
         }, 400);
         break;
       case 3:
-        setTimeout(function () {
+        setTimeout(() => {
           document.getElementById('purple').classList.remove('activeP');
         }, 400);
         break;
-      default: return;
+      default:
+        return;
     }
   };
 
@@ -94,10 +88,13 @@ class GamePage extends Component {
    else calculate score 
      */
     }
+    console.log('checking for winners');
+    console.log(this.state);
     let loser = false;
     if (user.length === susan.length) {
-      for (let i = 0; i < this.state.susansColors.length; i++) {
+      for (let i = 0; i < susan.length; i++) {
         if (susan[i] !== user[i]) {
+          console.log('you lost');
           loser = true;
           // gamePage.style.visibility = 'hidden';
           // page3.style.visibility = 'visible';
@@ -109,6 +106,7 @@ class GamePage extends Component {
         }
       }
       if (!loser) {
+        console.log('you won!!!!');
         // score += this.state.susansColors.length * 10;
         // gamePage.style.visibility = 'hidden';
         // nextLevel.style.visibility = 'visible';
@@ -117,6 +115,9 @@ class GamePage extends Component {
   };
 
   render() {
+    const { usersColors, susansColors } = this.state;
+    if (usersColors.length === susansColors.length) this.winOrLoseAfter(susansColors, usersColors);
+
     return (
       <div className="page" id="page2">
         <div className="susan-container">
