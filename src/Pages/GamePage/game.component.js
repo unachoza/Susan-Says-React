@@ -2,29 +2,6 @@ import React, { Component } from 'react';
 import Button from 'Components/Buttons/Button.component';
 import 'Components/Buttons/button.styles.css';
 
-const buttons = [
-  {
-    dom: 'blue',
-    value: 1,
-  },
-  {
-    dom: 'green',
-    value: 2,
-  },
-  {
-    dom: 'purple',
-    value: 3,
-  },
-  {
-    dom: 'red',
-    value: 0,
-  },
-  {
-    dom: 'go',
-    value: 'go',
-  },
-];
-
 class GamePage extends Component {
   constructor() {
     super();
@@ -65,7 +42,7 @@ class GamePage extends Component {
     }
     console.log(e.target.value);
     let value = e.target.value
-    this.setState((prevState) => ({ usersColors: prevState.usersColors, value }));
+    this.setState(prevState => ({ usersColors: [...prevState.usersColors, value] }));
     console.log(this.state);
     // this.state.usersColors.push(buttons[i]['value']);
     // this.winOrLoseAfter(this.state.susansColors, this.state.usersColors);
@@ -105,6 +82,7 @@ class GamePage extends Component {
           document.getElementById('purple').classList.remove('activeP');
         }, 400);
         break;
+      default: return;
     }
   };
 
