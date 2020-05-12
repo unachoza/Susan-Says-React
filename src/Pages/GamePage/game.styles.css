@@ -14,7 +14,7 @@
   flex-grow: 1;
   box-shadow: 0px 5px 10px white(245, 244, 244, 0.4);
 }
-#blue {
+.blue {
   background: blue;
   position: fixed;
   z-index: 1;
@@ -30,10 +30,13 @@
 #blue:focus {
   animation: grow 0.15s;
 }
+#activeBlue {
+  background: rgb(33, 187, 238);
+}
 #blue:active {
   background: rgb(33, 187, 238);
 }
-#red {
+.red {
   z-index: 2;
   background: red;
   top: 20vh;
@@ -49,10 +52,13 @@
 #red:focus {
   animation: grow 0.15s;
 }
+#activeRed {
+  background: rgb(247, 50, 188);
+}
 #red:active {
   background: rgb(247, 50, 188);
 }
-#green {
+.green {
   z-index: 3;
   background: green;
   top: 44.5vh;
@@ -70,7 +76,10 @@
 #green:active {
   background: rgb(132, 216, 7);
 }
-#purple {
+#activeGreen {
+  background: rgb(132, 216, 7);
+}
+.purple {
   z-index: 4;
   background: purple;
   left: 3vw;
@@ -85,6 +94,9 @@
 }
 #purple:focus {
   animation: grow 0.15s;
+}
+#activePurple {
+  background: rgb(236, 24, 236);
 }
 #purple:active {
   background: rgb(236, 24, 236);

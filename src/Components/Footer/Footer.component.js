@@ -1,6 +1,6 @@
 import React from 'react';
 import 'Components/Footer/Footer.styles.css'
 
-const Footer = ({ womensNames }) => <div className="ladys-name">{womensNames}</div>;
+const Footer = ({ ladies }) => <div className="ladys-name">lady{ladies.name}</div>;
 
 export default Footer

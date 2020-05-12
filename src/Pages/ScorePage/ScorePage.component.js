@@ -6,7 +6,6 @@ class ScorePage extends Component {
     return (
       <div className="page" id="page3">
         <h5 id="display-score">
-          00 points<br></br>
           Your Score
         </h5>
         <h4>
