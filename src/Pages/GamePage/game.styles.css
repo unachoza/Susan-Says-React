@@ -30,12 +30,10 @@
 #blue:focus {
   animation: grow 0.15s;
 }
-#activeBlue {
+#activeBlue blue:active {
   background: rgb(33, 187, 238);
 }
-#blue:active {
-  background: rgb(33, 187, 238);
-}
+
 .red {
   z-index: 2;
   background: red;
@@ -52,10 +50,7 @@
 #red:focus {
   animation: grow 0.15s;
 }
-#activeRed {
-  background: rgb(247, 50, 188);
-}
-#red:active {
+#activeRed red:active {
   background: rgb(247, 50, 188);
 }
 .green {
@@ -73,10 +68,8 @@
 #green:focus {
   animation: grow 0.15s;
 }
-#green:active {
-  background: rgb(132, 216, 7);
-}
-#activeGreen {
+
+#activeGreen green:active {
   background: rgb(132, 216, 7);
 }
 .purple {
@@ -95,12 +88,10 @@
 #purple:focus {
   animation: grow 0.15s;
 }
-#activePurple {
+#activePurple purple:active {
   background: rgb(236, 24, 236);
 }
-#purple:active {
-  background: rgb(236, 24, 236);
-}
+
 #go {
   z-index: 1;
   background: black;

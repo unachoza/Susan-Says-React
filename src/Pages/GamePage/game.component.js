@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from 'Components/Buttons/Button.component';
 import Footer from 'Components/Footer/Footer.component';
 import { ladies } from 'Constants/constants';
 import 'Components/Buttons/button.styles.css';
 
-class GamePage extends Component {
-  constructor() {
-    super();
-    this.state = {
-      susansColors: [],
-      usersColors: [],
-      activeBlue: false,
-      activeGreen: false,
-      activeRed: false,
-      activePurple: false,
-    };
-  }
-  handleGo = () => {
-    const { susansColors } = this.state;
+const GamePage = ({gamePage, showScore}) =>  {
+    const [susansColors, setSusansColors] = useState([])
+    const [usersColors, setUserColors] = useState([])
+    const [activeBlue, setActiveBlue ] = useState(false)  
+    const [activeGreen, setActiveGreen] = useState(false) 
+    const [activeRed, setActiveRed] = useState(false) 
+    const [activePurple, setActivePurple] = useState(false)  
+  const handleGo = () => {
     console.log('go, we are going!');
     {
       /*pseudocode:
@@ -28,61 +22,63 @@ class GamePage extends Component {
     if win allow next level to appear
     if lose show score page  */
     }
-
-    this.addRandomColorToSequence();
-    this.susanBlink(susansColors);
+    addRandomColorToSequence();
   };
-  addRandomColorToSequence = () => {
+  const addRandomColorToSequence = () => {
     let element = Math.floor(Math.random() * 4);
     console.log(element);
-    this.setState((prevState) => ({ susansColors: [...prevState.susansColors, element] }));
-    console.log(this.state);
+    setSusansColors([...susansColors, element] );
   };
 
-  clickColorButtons = (e) => {
-    const { usersColors, susansColors } = this.state;
+  const clickColorButtons = (e) => {
     let value = e.target.value;
-    console.log(value);
-    this.setState((prevState) => ({ usersColors: [...prevState.usersColors, parseInt(value)] }));
+    setUserColors([...usersColors, parseInt(value)]);
     if (usersColors.length === susansColors.length) this.winOrLoseAfter(susansColors, usersColors);
   };
 
   // pseudocode:
-  //    takes susansColors sequence and translates to which colors need to blink
-  susanBlink = (sequence) => {
-    sequence.forEach((color, i) =>
+  //    takes susansColors sequence and translates to which colors need to blink 
+  
+  useEffect((susansColors) => {
+    console.log('because');
+    susansColors.forEach((color, i) =>
       setTimeout(() => {
-        this.whichColorBlinks(color);
+        console.log(color, 'because go was clicked susan should be blinking');
+        whichColorBlinks(color);
       }, i * 500)
     );
-  };
+  }, 
+  [susansColors]
+  )
+
 
   // pseudocode:
   // translates sequences arr values to which colors blink
-  whichColorBlinks = (color) => {
+  const whichColorBlinks = (color) => {
+    console.log('checking for blink');
     switch (color) {
       case 0:
-        this.setState({ activeRed: true });
+        setActiveRed(true)
         setTimeout(() => {
-          this.setState({ activeRed: false });
+          setActiveRed(false)
         }, 400);
         break;
       case 1:
-        this.setState({ activeBlue: true });
+        setActiveBlue(true)
         setTimeout(() => {
-          this.setState({ activeBlue: false });
+          setActiveBlue(false)
         }, 400);
         break;
       case 2:
-        this.setState({ activeGreen: true });
+        setActiveGreen(true)
         setTimeout(() => {
-          this.setState({ activeGreen: false });
+          setActiveGreen(false)
         }, 400);
         break;
       case 3:
-        this.setState({ activePurple: true });
+        setActivePurple(true)
         setTimeout(() => {
-          this.setState({ activePurple: false });
+          setActivePurple(false)
         }, 400);
         break;
       default:
@@ -90,7 +86,7 @@ class GamePage extends Component {
     }
   };
 
-  winOrLoseAfter = (susan, user) => {
+  const winOrLoseAfter = (susan, user) => {
     {
       /*pseudocode:
    compares arrays, susan v user,
@@ -99,13 +95,12 @@ class GamePage extends Component {
      */
     }
     console.log('checking for winners');
-    console.log(this.state);
     let loser = false;
     if (user.length === susan.length) {
       for (let i = 0; i < susan.length; i++) {
         if (susan[i] !== user[i]) {
           loser = true;
-          this.props.showScore();
+          showScore();
           // gamePage.style.visibility = 'hidden';
           // page3.style.visibility = 'visible';
           // theseButtons.style.margintop = '28vh';
@@ -125,23 +120,21 @@ class GamePage extends Component {
       }
     }
   };
-  nextLevelBackgroundChange = () => {
+  const nextLevelBackgroundChange = () => {
     console.log('next level was clicked');
     // currentBackgroundImage += 1;
     // document.body.style.background = `url(${bImages[currentBackgroundImage]})`;
     // document.body.style.backgroundSize = 'cover';
     // document.body.style.backgroundRepeat = 'no-reapeat';
   };
-  nextLevelAchieved = () => {
+  const nextLevelAchieved = () => {
     console.log('next level acheived was clicked');
     // gamePage.style.visibility = 'visible';
     // nextLevel.style.visibility = 'hidden';
     // user = [];
   };
-  render() {
-    const { usersColors, susansColors, activeBlue, activeRed, activePurple, activeGreen } = this.state;
+    console.log(this.state);
     if (usersColors.length === susansColors.length) this.winOrLoseAfter(susansColors, usersColors);
-    console.log('rerender');
 
     return (
       <div className="page" id="page2">
@@ -189,8 +182,7 @@ class GamePage extends Component {
         </div>
         <Footer ladies={ladies} />
       </div>
-    );
-  }
+    )
 }
 
 export default GamePage;
