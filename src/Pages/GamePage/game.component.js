@@ -4,14 +4,15 @@ import Footer from 'Components/Footer/Footer.component';
 import { ladies } from 'Constants/constants';
 import 'Components/Buttons/button.styles.css';
 
-const GamePage = ({ gamePage, showScore }) => {
+const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
   const [susansColors, setSusansColors] = useState([]);
   const [usersColors, setUserColors] = useState([]);
   const [activeBlue, setActiveBlue] = useState(false);
   const [activeGreen, setActiveGreen] = useState(false);
   const [activeRed, setActiveRed] = useState(false);
   const [activePurple, setActivePurple] = useState(false);
-
+  const [currentVisibleButton, setCurrentVisibleButton] = useState("")
+  
   useEffect(() => {
     susanBlinks(susansColors);
   }, [susansColors]);
@@ -32,8 +33,7 @@ const GamePage = ({ gamePage, showScore }) => {
     let value = e.target.value;
     setUserColors([...usersColors, parseInt(value)]);
   };
-  // pseudocode:
-  //    takes susansColors sequence and translates to which colors need to blink
+
   const susanBlinks = (susansColors) => {
     console.log(susansColors)
       susansColors.forEach((color, i) =>
@@ -96,11 +96,12 @@ const GamePage = ({ gamePage, showScore }) => {
           // restart.style.visibility = 'visible';
           break;
         }
-      }
+      } 
       if (!loser) {
         console.log('you won!!!!');
-        nextLevelAchieved(user);
-        nextLevelBackgroundChange();
+        setCurrentButton('nextLevel')
+        // nextLevelAchieved(user);
+        // nextLevelBackgroundChange();
         // score +=state.susansColors.length * 10;
         // gamePage.style.visibility = 'hidden';
         // nextLevel.style.visibility = 'visible';
@@ -116,6 +117,7 @@ const GamePage = ({ gamePage, showScore }) => {
   };
   const nextLevelAchieved = () => {
     console.log('next level acheived was clicked');
+    setCurrentButton(null)
     setUserColors([])
     // gamePage.style.visibility = 'visible';
     // nextLevel.style.visibility = 'hidden';
@@ -123,7 +125,7 @@ const GamePage = ({ gamePage, showScore }) => {
   };
   // if (usersColors.length === susansColors.length) winOrLoseAfter(susansColors, usersColors);
   return (
-    <div className="page" id="page2">
+    <div className="page" >
       <div className="susan-container">
         <Button
           className="color top"
@@ -165,6 +167,9 @@ const GamePage = ({ gamePage, showScore }) => {
         >
           Red
         </Button>
+      </div>
+      <div className="theseButtons">
+     
       </div>
       <Footer ladies={ladies} />
     </div>

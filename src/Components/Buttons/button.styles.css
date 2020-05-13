@@ -188,12 +188,6 @@
   visibility: hidden;
 }
 
-.theseButtons {
-  padding-top: 55vh;
-  padding-left: 8vw;
-  padding-bottom: 3vh;
-  z-index: 1;
-}
 .button {
   height: 50px;
   border: solid 1px black;
