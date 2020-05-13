@@ -13,55 +13,36 @@ const GamePage = ({ gamePage, showScore }) => {
   const [activePurple, setActivePurple] = useState(false);
 
   useEffect(() => {
-    susanBlink(susansColors);
+    susanBlinks(susansColors);
   }, [susansColors]);
+
+  useEffect(() => {
+    winOrLoseAfter(susansColors, usersColors);
+  }, [usersColors]);
+
   const handleGo = () => {
-    console.log('go, we are going!');
-    {
-      /*pseudocode:
-    susansColors needs to increment
-    susansColors needs to call color buttons to blink
-    wait for user response to equal length of susansColors
-    then check win logic
-    if win allow next level to appear
-    if lose show score page  */
-    }
     addRandomColorToSequence();
   };
   const addRandomColorToSequence = () => {
     let element = Math.floor(Math.random() * 4);
-    console.log(element);
     setSusansColors([...susansColors, element]);
   };
 
-  const clickColorButtons = (e) => {
+  const handleUserClickColorButtons = (e) => {
     let value = e.target.value;
     setUserColors([...usersColors, parseInt(value)]);
-    if (usersColors.length === susansColors.length) winOrLoseAfter(susansColors, usersColors);
   };
-
   // pseudocode:
   //    takes susansColors sequence and translates to which colors need to blink
-  const susanBlink = (susansColors) => {
-      console.log(susansColors);
+  const susanBlinks = (susansColors) => {
+    console.log(susansColors)
       susansColors.forEach((color, i) =>
         setTimeout(() => {
-          console.log(color, 'because go was clicked susan should be blinking');
           whichColorBlinks(color);
         }, i * 500)
       );
-    },
-    //   useEffect(() => {
-    //   susanBlink(susansColors)
-    //   },
-
-    //   [susansColors]
-    // );
-
-    // pseudocode:
-    // translates sequences arr values to which colors blink
-    whichColorBlinks = (color) => {
-      console.log('checking for blink');
+  }
+   const whichColorBlinks = (color) => {
       switch (color) {
         case 0:
           setActiveRed(true);
@@ -92,7 +73,7 @@ const GamePage = ({ gamePage, showScore }) => {
       }
     };
 
-  const winOrLoseAfter = (susan, user) => {
+  const winOrLoseAfter = ((susan, user) => {
     {
       /*pseudocode:
    compares arrays, susan v user,
@@ -100,7 +81,7 @@ const GamePage = ({ gamePage, showScore }) => {
    else calculate score 
      */
     }
-    console.log('checking for winners');
+    if (user.length === 0 && susan.length === 0)return
     let loser = false;
     if (user.length === susan.length) {
       for (let i = 0; i < susan.length; i++) {
@@ -118,14 +99,14 @@ const GamePage = ({ gamePage, showScore }) => {
       }
       if (!loser) {
         console.log('you won!!!!');
-        nextLevelAchieved();
+        nextLevelAchieved(user);
         nextLevelBackgroundChange();
         // score +=state.susansColors.length * 10;
         // gamePage.style.visibility = 'hidden';
         // nextLevel.style.visibility = 'visible';
       }
     }
-  };
+  });
   const nextLevelBackgroundChange = () => {
     console.log('next level was clicked');
     // currentBackgroundImage += 1;
@@ -135,12 +116,12 @@ const GamePage = ({ gamePage, showScore }) => {
   };
   const nextLevelAchieved = () => {
     console.log('next level acheived was clicked');
+    setUserColors([])
     // gamePage.style.visibility = 'visible';
     // nextLevel.style.visibility = 'hidden';
     // user = [];
   };
-  if (usersColors.length === susansColors.length) winOrLoseAfter(susansColors, usersColors);
-
+  // if (usersColors.length === susansColors.length) winOrLoseAfter(susansColors, usersColors);
   return (
     <div className="page" id="page2">
       <div className="susan-container">
@@ -149,7 +130,7 @@ const GamePage = ({ gamePage, showScore }) => {
           id="blue"
           style={activeBlue ? { background: 'rgb(33, 187, 238)' } : null}
           value={1}
-          onClick={(e) => clickColorButtons(e)}
+          onClick={(e) => handleUserClickColorButtons(e)}
         >
           Blue
         </Button>
@@ -158,7 +139,7 @@ const GamePage = ({ gamePage, showScore }) => {
           id="green"
           style={activeGreen ? { background: 'rgb(132, 216, 7)' } : null}
           value={2}
-          onClick={(e) => clickColorButtons(e)}
+          onClick={(e) => handleUserClickColorButtons(e)}
         >
           Green
         </Button>
@@ -171,7 +152,7 @@ const GamePage = ({ gamePage, showScore }) => {
           id="purple"
           value={3}
           style={activePurple ? { background: 'rgb(236, 24, 236)' } : null}
-          onClick={(e) => clickColorButtons(e)}
+          onClick={(e) => handleUserClickColorButtons(e)}
         >
           Purple
         </Button>
@@ -180,7 +161,7 @@ const GamePage = ({ gamePage, showScore }) => {
           id="red"
           style={activeRed ? { background: 'rgb(247, 50, 188)' } : null}
           value={0}
-          onClick={(e) => clickColorButtons(e)}
+          onClick={(e) => handleUserClickColorButtons(e)}
         >
           Red
         </Button>
