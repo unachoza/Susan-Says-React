@@ -7,6 +7,7 @@ const ScorePage = ({ startGame }) => {
   return (
     <div className="page">
       <h5 id="display-score">Your Score</h5>
+      'Susan Says ' + 'Your Score is ' + score;
       <h4>
         <a href="https://www.linkedin.com/in/arianna-choza-37a44762/" target="blank">
           created by arianna choza

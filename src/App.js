@@ -16,9 +16,11 @@ const App = () => {
   const showScore = () => {
     setCurrentPage('scorePage');
   };
-
+  const nextLevelBackgroundChange = () => {
+    console.log('next level was clicked');
+  }
   return (
-    <div className="game-container">
+    <div className="game-container" style={{}}>
       {curretPage === 'home' && <HomePage />}
       {curretPage === 'gamePage' && <GamePage curretPage={curretPage} setCurrentButton={setCurrentButton} showScore={showScore} startGame={startGame} />}
       {curretPage === 'scorePage' && <ScorePage />}

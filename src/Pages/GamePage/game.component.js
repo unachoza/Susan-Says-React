@@ -74,56 +74,30 @@ const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
     };
 
   const winOrLoseAfter = ((susan, user) => {
-    {
-      /*pseudocode:
-   compares arrays, susan v user,
-   if equal, show next level button
-   else calculate score 
-     */
-    }
-    if (user.length === 0 && susan.length === 0)return
+    if (user.length === 0 && susan.length === 0) return
     let loser = false;
     if (user.length === susan.length) {
       for (let i = 0; i < susan.length; i++) {
         if (susan[i] !== user[i]) {
           loser = true;
           showScore();
-          // gamePage.style.visibility = 'hidden';
-          // page3.style.visibility = 'visible';
-          // theseButtons.style.margintop = '28vh';
-          // this.state.usersColorsScore.innerHTML = 'Susan Says ' + 'Your Score is ' + score;
-          // scorePage.style.visibility = 'visible';
-          // restart.style.visibility = 'visible';
-          break;
+          setCurrentButton('restart')
+          
         }
       } 
       if (!loser) {
         console.log('you won!!!!');
         setCurrentButton('nextLevel')
-        // nextLevelAchieved(user);
-        // nextLevelBackgroundChange();
-        // score +=state.susansColors.length * 10;
-        // gamePage.style.visibility = 'hidden';
-        // nextLevel.style.visibility = 'visible';
+        setUserColors([])
       }
     }
   });
-  const nextLevelBackgroundChange = () => {
-    console.log('next level was clicked');
+ 
     // currentBackgroundImage += 1;
     // document.body.style.background = `url(${bImages[currentBackgroundImage]})`;
     // document.body.style.backgroundSize = 'cover';
     // document.body.style.backgroundRepeat = 'no-reapeat';
-  };
-  const nextLevelAchieved = () => {
-    console.log('next level acheived was clicked');
-    setCurrentButton(null)
-    setUserColors([])
-    // gamePage.style.visibility = 'visible';
-    // nextLevel.style.visibility = 'hidden';
-    // user = [];
-  };
-  // if (usersColors.length === susansColors.length) winOrLoseAfter(susansColors, usersColors);
+ 
   return (
     <div className="page" >
       <div className="susan-container">
