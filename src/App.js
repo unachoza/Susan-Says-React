@@ -4,6 +4,7 @@ import GamePage from 'Pages/GamePage/game.component';
 import ScorePage from 'Pages/ScorePage/ScorePage.component';
 import Button from 'Components/Buttons/Button.component.js';
 import 'Components/Buttons/button.styles.css';
+import ladies from 'Constants/constants'
 
 const App = () => {
   const [curretPage, setCurrentPage] = useState('home');
@@ -20,7 +21,7 @@ const App = () => {
     console.log('next level was clicked');
   }
   return (
-    <div className="game-container" style={{}}>
+    <div className="game-container" style={{background: `${ladies.img[i]}`}}>
       {curretPage === 'home' && <HomePage />}
       {curretPage === 'gamePage' && <GamePage curretPage={curretPage} setCurrentButton={setCurrentButton} showScore={showScore} startGame={startGame} />}
       {curretPage === 'scorePage' && <ScorePage />}
