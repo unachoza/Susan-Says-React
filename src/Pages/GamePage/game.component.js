@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'Components/Buttons/Button.component';
 import Footer from 'Components/Footer/Footer.component';
-import { ladies } from 'Constants/constants';
+import ladies from 'Constants/constants';
 import 'Components/Buttons/button.styles.css';
 
 const GamePage = ({ gamePage, showScore, setCurrentButton }) => {

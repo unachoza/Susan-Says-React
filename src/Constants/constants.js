@@ -1,4 +1,4 @@
-export const ladies = [
+const ladies = [
   {
     name: 'Susan Sarandon',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1546220914/susan-sarandon.jpg',
@@ -181,3 +181,5 @@ export const ladies = [
   //   trivia: [],
   // },
 ];
+
+export default ladies;
