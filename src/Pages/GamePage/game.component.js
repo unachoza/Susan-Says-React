@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'Components/Buttons/Button.component';
-import Footer from 'Components/Footer/Footer.component';
-import ladies from 'Constants/constants';
 import 'Components/Buttons/button.styles.css';
 
 const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
   const [susansColors, setSusansColors] = useState([]);
   const [usersColors, setUserColors] = useState([]);
-  const [activeBlue, setActiveBlue] = useState(false);
-  const [activeGreen, setActiveGreen] = useState(false);
-  const [activeRed, setActiveRed] = useState(false);
-  const [activePurple, setActivePurple] = useState(false);
-  const [currentVisibleButton, setCurrentVisibleButton] = useState("")
+  const [activeColor, setActiveColor] = useState(null)
   
   useEffect(() => {
     susanBlinks(susansColors);
@@ -42,36 +36,20 @@ const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
         }, i * 500)
       );
   }
-   const whichColorBlinks = (color) => {
-      switch (color) {
-        case 0:
-          setActiveRed(true);
-          setTimeout(() => {
-            setActiveRed(false);
+  const whichBlinks = {
+    0: "red",
+    1: "blue",
+    2: "green",
+    3: "purple"
+  }
+
+  const whichColorBlinks = (color) => {
+  setActiveColor(whichBlinks[color])
+    console.log(setActiveColor(whichBlinks[color]))
+     setTimeout(() => {
+            setActiveColor(null);
           }, 400);
-          break;
-        case 1:
-          setActiveBlue(true);
-          setTimeout(() => {
-            setActiveBlue(false);
-          }, 400);
-          break;
-        case 2:
-          setActiveGreen(true);
-          setTimeout(() => {
-            setActiveGreen(false);
-          }, 400);
-          break;
-        case 3:
-          setActivePurple(true);
-          setTimeout(() => {
-            setActivePurple(false);
-          }, 400);
-          break;
-        default:
-          return;
-      }
-    };
+  }
 
   const winOrLoseAfter = ((susan, user) => {
     if (user.length === 0 && susan.length === 0) return
@@ -104,7 +82,7 @@ const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
         <Button
           className="color top"
           id="blue"
-          style={activeBlue ? { background: 'rgb(33, 187, 238)' } : null}
+          style={activeColor === "blue" ? { background: 'rgb(33, 187, 238)' } : null}
           value={1}
           onClick={(e) => handleUserClickColorButtons(e)}
         >
@@ -113,7 +91,7 @@ const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
         <Button
           className="color top"
           id="green"
-          style={activeGreen ? { background: 'rgb(132, 216, 7)' } : null}
+          style={activeColor === "green" ? { background: 'rgb(132, 216, 7)' } : null}
           value={2}
           onClick={(e) => handleUserClickColorButtons(e)}
         >
@@ -127,7 +105,7 @@ const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
           className="color side"
           id="purple"
           value={3}
-          style={activePurple ? { background: 'rgb(236, 24, 236)' } : null}
+          style={activeColor === "purple" ? { background: 'rgb(236, 24, 236)' } : null}
           onClick={(e) => handleUserClickColorButtons(e)}
         >
           Purple
@@ -135,7 +113,7 @@ const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
         <Button
           className="color side"
           id="red"
-          style={activeRed ? { background: 'rgb(247, 50, 188)' } : null}
+          style={activeColor === "red" ? { background: 'rgb(247, 50, 188)' } : null}
           value={0}
           onClick={(e) => handleUserClickColorButtons(e)}
         >
