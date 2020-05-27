@@ -39,7 +39,7 @@ const App = () => {
             startGame={startGame}
           />
         )}
-        {curretPage === 'scorePage' && <ScorePage />}
+        {curretPage === 'scorePage' && <ScorePage ladiesIndex={ladiesIndex}/>}
         <div className="theseButtons">
           {currentButton === 'play' && (
             <Button className="button" onClick={() => startGame()}>

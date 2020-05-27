@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import Trivia from 'Components/Trivia/Trivia.component';
 import Button from 'Components/Buttons/Button.component';
 import 'Components/Buttons/button.styles.css';
 import 'Pages/ScorePage/ScorePage.styles.css';
 
-const ScorePage = ({ startGame }) => {
+const ScorePage = ({ ladiesIndex }) => {
   return (
     <div className="page">
       <h5 id="display-score">Your Score</h5>
@@ -13,6 +14,7 @@ const ScorePage = ({ startGame }) => {
           created by arianna choza
         </a>
       </h4>
+      <Trivia ladiesIndex={ladiesIndex}/>
     </div>
   );
 };
