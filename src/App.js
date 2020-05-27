@@ -3,6 +3,7 @@ import HomePage from 'Pages/HomePage/home.component';
 import GamePage from 'Pages/GamePage/game.component';
 import ScorePage from 'Pages/ScorePage/ScorePage.component';
 import Button from 'Components/Buttons/Button.component.js';
+import Footer from 'Components/Footer/Footer.component.js'
 import 'Components/Buttons/button.styles.css';
 import ladies from 'Constants/constants.js';
 import 'App.css'
@@ -12,6 +13,7 @@ let ladiesIndex = 0;
 const App = () => {
   const [curretPage, setCurrentPage] = useState('home');
   const [currentButton, setCurrentButton] = useState('play');
+  // const [ladiesIndex, setLadiesIndex] = useState(0)
 
   const startGame = () => {
     setCurrentPage('gamePage');
@@ -56,6 +58,8 @@ const App = () => {
           )}
         </div>
       </div>
+      <Footer ladiesIndex={ladiesIndex} />
+      
     </div>
   );
 };

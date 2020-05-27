@@ -1,6 +1,10 @@
 import React from 'react';
-import 'Components/Footer/Footer.styles.css'
+import ladies from 'Constants/constants.js';
+import 'Components/Footer/Footer.styles.css';
 
-const Footer = ({ ladies }) => <div className="ladys-name">lady{ladies[1].name}</div>;
-
-export default Footer
+const Footer = ({ ladiesIndex }) => (
+  <div>
+    <div className="ladys-name">This lady is {ladies[ladiesIndex].name}</div>
+  </div>
+);
+export default Footer;

@@ -145,7 +145,6 @@ const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
       <div className="theseButtons">
      
       </div>
-      <Footer ladies={ladies} />
     </div>
   );
 };
