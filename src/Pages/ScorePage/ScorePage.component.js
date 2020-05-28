@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Trivia from 'Components/Trivia/Trivia.component';
-import Button from 'Components/Buttons/Button.component';
 import 'Components/Buttons/button.styles.css';
 import 'Pages/ScorePage/ScorePage.styles.css';
 

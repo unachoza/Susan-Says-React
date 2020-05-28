@@ -5,15 +5,12 @@ class Home extends Component {
   render() {
     return (
       <div className="page">
-        <h3>Instructions</h3>
-
-        <p>
+        <div>
           <strong>
             In effort to encourage more people to listen to women, I present to you Susan Says, a memory game.
           </strong>
-          Press the Black Go Button and listen as Susan flashes a sequence of colors. Repeat the pattern by clicking the
-          color buttons.<strong> Remember what Susan told you! </strong>
-        </p>
+          Press the black GO button and repeat the pattern shown.<strong> Remember what Susan told you! </strong>
+        </div>
       </div>
     );
   }
