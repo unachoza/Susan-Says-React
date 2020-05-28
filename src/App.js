@@ -23,7 +23,6 @@ const App = () => {
     setCurrentPage('scorePage');
   };
   const nextLevelBackgroundChange = () => {
-    console.log('next level was clicked', ladiesIndex);
     ladiesIndex++;
     setCurrentButton(null);
   };
@@ -37,6 +36,7 @@ const App = () => {
             setCurrentButton={setCurrentButton}
             showScore={showScore}
             startGame={startGame}
+            setCurrentPage={setCurrentPage}
           />
         )}
         {curretPage === 'scorePage' && <ScorePage ladiesIndex={ladiesIndex}/>}

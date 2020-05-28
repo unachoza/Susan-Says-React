@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'Components/Buttons/Button.component';
 import 'Components/Buttons/button.styles.css';
+import 'Pages/GamePage/game.styles.css'
 
-const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
+const GamePage = ({ showScore, setCurrentButton }) => {
   const [susansColors, setSusansColors] = useState([]);
   const [usersColors, setUserColors] = useState([]);
   const [activeColor, setActiveColor] = useState(null)
@@ -45,7 +46,6 @@ const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
 
   const whichColorBlinks = (color) => {
   setActiveColor(whichBlinks[color])
-    console.log(setActiveColor(whichBlinks[color]))
      setTimeout(() => {
             setActiveColor(null);
           }, 400);
@@ -64,20 +64,13 @@ const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
         }
       } 
       if (!loser) {
-        console.log('you won!!!!');
         setCurrentButton('nextLevel')
         setUserColors([])
       }
     }
   });
  
-    // currentBackgroundImage += 1;
-    // document.body.style.background = `url(${bImages[currentBackgroundImage]})`;
-    // document.body.style.backgroundSize = 'cover';
-    // document.body.style.backgroundRepeat = 'no-reapeat';
- 
   return (
-    <div className="page" >
       <div className="susan-container">
         <Button
           className="color top"
@@ -120,10 +113,6 @@ const GamePage = ({ gamePage, showScore, setCurrentButton }) => {
           Red
         </Button>
       </div>
-      <div className="theseButtons">
-     
-      </div>
-    </div>
   );
 };
 
