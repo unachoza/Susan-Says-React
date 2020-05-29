@@ -19,8 +19,8 @@
   position: relative;
   background: blue;
   z-index: 1;
-  top: 14.5vh;
-  left: 18.5vw;
+  /* top: 14.5%;
+  left: 18.5%; */
   transform: rotate(0deg);
   border-radius: 50px 50px 20px 20px;
 
@@ -36,8 +36,8 @@
   position: relative;
   z-index: 2;
   background: red;
-  top: 20vh;
-  left: 26.5vw;
+  top: -16%;
+  left: 54.5%;
   transform: rotate(-90deg) translate(0, -100%);
   transform-origin: 100% 0;
   border-radius: 20px 20px 50px 50px;
@@ -53,8 +53,8 @@
   position: relative;
   z-index: 3;
   background: green;
-  top: 44.5vh;
-  left: 18.5vw;
+  /* top: 44.5vh; */
+  left: 36%;
   transform: rotate(0deg);
   border-radius: 20px 20px 50px 50px;
   color: rgb(2, 83, 2);
@@ -69,8 +69,8 @@
   position: relative;
   z-index: 4;
   background: purple;
-  left: 3vw;
-  top: 20vh;
+  /* left: 3vw; */
+  top: 16%;
   transform: rotate(-90deg) translate(0, -100%);
   transform-origin: 100% 0;
   border-radius: 50px 50px 20px 20px;
@@ -89,8 +89,8 @@
   height: 100px;
   width: 140px;
   border-radius: 45%;
-  top: 29.5vh;
-  left: 21vw;
+  top: 1%;
+  left: 5%;
   color: white;
   font-size: 3em;
 }
@@ -168,7 +168,7 @@
   font-size: 1.5em;
   border: solid 1px black;
   background-color: #99a036;
-  border-radius: 30px;
+  border-radius: 10px;
   font-family: 'Orbitron', sans-serif;
   padding: 10px;
   z-index: 1;

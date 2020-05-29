@@ -71,30 +71,8 @@ const GamePage = ({ showScore, setCurrentButton }) => {
   });
  
   return (
-      <div className="susan-container">
-        <Button
-          className="color top"
-          id="blue"
-          style={activeColor === "blue" ? { background: 'rgb(33, 187, 238)' } : null}
-          value={1}
-          onClick={(e) => handleUserClickColorButtons(e)}
-        >
-          Blue
-        </Button>
-        <Button
-          className="color top"
-          id="green"
-          style={activeColor === "green" ? { background: 'rgb(132, 216, 7)' } : null}
-          value={2}
-          onClick={(e) => handleUserClickColorButtons(e)}
-        >
-          Green
-        </Button>
-        <br></br>
-        <Button className="color " id="go" value="go" onClick={() => handleGo()}>
-          Go
-        </Button>
-        <Button
+    <div className="susan-container">
+         <Button
           className="color side"
           id="purple"
           value={3}
@@ -104,13 +82,36 @@ const GamePage = ({ showScore, setCurrentButton }) => {
           Purple
         </Button>
         <Button
+          className="color top"
+          id="blue"
+          style={activeColor === "blue" ? { background: 'rgb(33, 187, 238)' } : null}
+          value={1}
+          onClick={(e) => handleUserClickColorButtons(e)}
+        >
+        Blue
+        </Button>
+        <Button
           className="color side"
           id="red"
           style={activeColor === "red" ? { background: 'rgb(247, 50, 188)' } : null}
           value={0}
           onClick={(e) => handleUserClickColorButtons(e)}
         >
-          Red
+        Red
+        </Button>
+      {/* <br></br> */}
+       <Button className="color " id="go" value="go" onClick={() => handleGo()}>
+        Go
+        </Button>
+      <br></br>
+        <Button
+          className="color top"
+          id="green"
+          style={activeColor === "green" ? { background: 'rgb(132, 216, 7)' } : null}
+          value={2}
+          onClick={(e) => handleUserClickColorButtons(e)}
+        >
+          Green
         </Button>
       </div>
   );
