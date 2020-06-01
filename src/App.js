@@ -13,6 +13,8 @@ let ladiesIndex = 0;
 const App = () => {
   const [curretPage, setCurrentPage] = useState('home');
   const [currentButton, setCurrentButton] = useState('play');
+  const [isDisabled, setIsDisabled] = useState(false);
+  
   // const [ladiesIndex, setLadiesIndex] = useState(0)
 
   const startGame = () => {
@@ -24,6 +26,7 @@ const App = () => {
   };
   const nextLevelBackgroundChange = () => {
     ladiesIndex++;
+    setIsDisabled(false)
     setCurrentButton(null);
   };
   return (
@@ -37,6 +40,8 @@ const App = () => {
             showScore={showScore}
             startGame={startGame}
             setCurrentPage={setCurrentPage}
+            isDisabled={isDisabled}
+            setIsDisabled={setIsDisabled}
           />
         )}
         {curretPage === 'scorePage' && <ScorePage ladiesIndex={ladiesIndex}/>}

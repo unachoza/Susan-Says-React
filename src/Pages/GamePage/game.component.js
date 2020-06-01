@@ -3,7 +3,7 @@ import Button from 'Components/Buttons/Button.component';
 import 'Components/Buttons/button.styles.css';
 import 'Pages/GamePage/game.styles.css'
 
-const GamePage = ({ showScore, setCurrentButton }) => {
+const GamePage = ({ showScore, setCurrentButton , isDisabled, setIsDisabled}) => {
   const [susansColors, setSusansColors] = useState([]);
   const [usersColors, setUserColors] = useState([]);
   const [activeColor, setActiveColor] = useState(null)
@@ -55,6 +55,7 @@ const GamePage = ({ showScore, setCurrentButton }) => {
     if (user.length === 0 && susan.length === 0) return
     let loser = false;
     if (user.length === susan.length) {
+      setIsDisabled(true)
       for (let i = 0; i < susan.length; i++) {
         if (susan[i] !== user[i]) {
           loser = true;
@@ -78,6 +79,7 @@ const GamePage = ({ showScore, setCurrentButton }) => {
           value={3}
           style={activeColor === "purple" ? { background: 'rgb(236, 24, 236)' } : null}
           onClick={(e) => handleUserClickColorButtons(e)}
+          disabled={isDisabled}
         >
           Purple
         </Button>
@@ -87,6 +89,7 @@ const GamePage = ({ showScore, setCurrentButton }) => {
           style={activeColor === "blue" ? { background: 'rgb(33, 187, 238)' } : null}
           value={1}
           onClick={(e) => handleUserClickColorButtons(e)}
+          disabled={isDisabled}
         >
         Blue
         </Button>
@@ -96,11 +99,12 @@ const GamePage = ({ showScore, setCurrentButton }) => {
           style={activeColor === "red" ? { background: 'rgb(247, 50, 188)' } : null}
           value={0}
           onClick={(e) => handleUserClickColorButtons(e)}
+          disabled={isDisabled}
         >
         Red
         </Button>
       {/* <br></br> */}
-       <Button className="color " id="go" value="go" onClick={() => handleGo()}>
+       <Button className="color " id="go" value="go" onClick={() => handleGo()} disabled={isDisabled}>
         Go
         </Button>
       <br></br>
@@ -110,6 +114,7 @@ const GamePage = ({ showScore, setCurrentButton }) => {
           style={activeColor === "green" ? { background: 'rgb(132, 216, 7)' } : null}
           value={2}
           onClick={(e) => handleUserClickColorButtons(e)}
+          disabled={isDisabled}
         >
           Green
         </Button>

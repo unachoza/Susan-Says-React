@@ -2,26 +2,26 @@ const ladies = [
   {
     name: 'Susan Sarandon',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1546220914/susan-sarandon.jpg',
-    bioBlurb: 'Narrarates many great documentaries',
-    trivia: [],
+    bioBlurb: 'American actress and activist',
+    trivia: ['Narrarates many great documentaries'],
   },
   {
     name: 'Maya Angelou',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1546220905/maya-angula.jpg',
-    bioBlurb: 'why does the caged bird sing',
-    trivia: [],
+    bioBlurb: 'American poet, singer, memoirist, and civil rights activist',
+    trivia: ['wrote Why does the caged bird sing',],
   },
   {
     name: 'Frida Kahlo',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1538344728/frida_K.jpg',
-    bioBlurb: 'distopian art commentary on womens place in socity ',
-    trivia: [],
+    bioBlurb: 'Mexican painter and feminist icon',
+    trivia: ['known for her uncompromising and brilliantly coloured self-portraits that deal with such themes as identity, the human body, and death'],
   },
   {
     name: 'Betty Friedan',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1546223655/BettyFriedan.jpg',
     bioBlurb: 'feminine mistique',
-    trivia: [],
+    trivia: ['Wrote the Feminine Min', ],
   },
   {
     name: 'Gloria Steinem',
