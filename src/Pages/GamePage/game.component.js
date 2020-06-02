@@ -72,7 +72,7 @@ const GamePage = ({ showScore, setCurrentButton , isDisabled, setIsDisabled}) =>
   });
  
   return (
-    <div className="susan-container">
+    <div className="susan-container" >
          <Button
           className="color side"
           id="purple"
