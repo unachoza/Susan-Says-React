@@ -1,5 +1,5 @@
 import React from 'react';
-import ladies from 'Constants/lady.constants.js';
+import ladies from 'Constants/lady.constants';
 import 'Components/Footer/Footer.styles.css';
 
 const Footer = ({ ladiesIndex }) => (

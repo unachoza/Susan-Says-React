@@ -1,14 +1,10 @@
 .page {
-  border: solid 1px black;
+  /* border: solid 1px black; */
+  width: 100vw;
+  height: 100vh;
 }
-.theseButtons {
-  padding-top: 55vh;
-  padding-left: 8vw;
-  padding-bottom: 3vh;
-  z-index: 1;
-}
+
 .text-window {
-  display: flex;
   background-color: rgba(128, 128, 128, 0.5);
   width: 499px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -18,4 +14,40 @@
   padding: 25px;
   border-radius: 10px;
   border: solid;
+  animation: slidein 0.7s ease-in, slideout 0.7s ease-in 2s;
+  margin: 15vh 15vw;
+}
+
+@keyframes slidein {
+  0% {
+    transform: skewX(20deg) translateX(-500px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(0);
+  }
+  62% {
+    transform: skewX(0deg) translateX(30px);
+    opacity: 1;
+  }
+  72% {
+    transform: skewX(-10deg);
+  }
+  62% {
+    transform: skewX(0deg) translateX(0px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideout {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: skewX(-10deg) translateX(1500px);
+    opacity: 0;
+  }
 }
