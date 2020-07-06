@@ -1,7 +1,12 @@
 .ladys-name {
+  display: flex;
+  background-color: rgba(128, 128, 128, 0.5);
+  width: 499px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   color: white;
-  text-align: right;
   margin: 0 20px;
+  padding: 25px;
+  border-radius: 10px;
+  border: solid;
 }
