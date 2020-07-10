@@ -9,19 +9,21 @@ const ladies = [
     name: 'Maya Angelou',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1546220905/maya-angula.jpg',
     bioBlurb: 'American poet, singer, memoirist, and civil rights activist',
-    trivia: ['wrote Why does the caged bird sing',],
+    trivia: ['wrote Why does the caged bird sing'],
   },
   {
     name: 'Frida Kahlo',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1538344728/frida_K.jpg',
     bioBlurb: 'Mexican painter and feminist icon',
-    trivia: ['known for her uncompromising and brilliantly coloured self-portraits that deal with such themes as identity, the human body, and death'],
+    trivia: [
+      'known for her uncompromising and brilliantly coloured self-portraits that deal with such themes as identity, the human body, and death',
+    ],
   },
   {
     name: 'Betty Friedan',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1546223655/BettyFriedan.jpg',
     bioBlurb: 'feminine mistique',
-    trivia: ['Wrote the Feminine Min', ],
+    trivia: ['Wrote the Feminine Min'],
   },
   {
     name: 'Gloria Steinem',
@@ -98,8 +100,8 @@ const ladies = [
   {
     name: 'Michelle Obama',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1546220906/Michelle_o.png',
-    bioBlurb: '',
-    trivia: [],
+    bioBlurb: 'First Lady of the United States.',
+    trivia: ['campaign to get kids active, Lets move.', 'Planted White house vegetable garden'],
   },
   {
     name: 'Sandra Oh',
@@ -110,13 +112,13 @@ const ladies = [
   {
     name: 'Agnès Varda',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1546223657/agnes_varda.jpg',
-    bioBlurb: '',
+    bioBlurb: 'French Film Director. New Wave',
     trivia: [],
   },
   {
     name: 'Sheryl Sandberg',
     img: 'https://res.cloudinary.com/dh41vh9dx/image/upload/v1546220915/Sheryl_Sanberg.png',
-    bioBlurb: '',
+    bioBlurb: 'Author of Lean In',
     trivia: [],
   },
   {
