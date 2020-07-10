@@ -13,8 +13,8 @@
   margin: 0 20px;
   padding: 25px;
   border-radius: 10px;
-  border: solid;
-  animation: slidein 0.7s ease-in, slideout 0.7s ease-in 2s;
+  border: solid 1px;
+  animation: slidein 0.7s ease-in, slideout 0.7s ease-in 3s;
   margin: 15vh 15vw;
 }
 
