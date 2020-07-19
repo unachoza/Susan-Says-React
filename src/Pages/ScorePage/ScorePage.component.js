@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Trivia from 'Components/Trivia/Trivia.component';
 import 'Components/Buttons/button.styles.css';
 import 'Pages/ScorePage/ScorePage.styles.css';
@@ -13,7 +13,7 @@ const ScorePage = ({ ladiesIndex }) => {
           created by arianna choza
         </a>
       </h4>
-      <Trivia ladiesIndex={ladiesIndex}/>
+      <Trivia ladiesIndex={ladiesIndex} />
     </div>
   );
 };

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+const popupVariables = 'shar on Twitter';
+popupVariables = 'susan instructions';
+
 class Dialog extends Component {
   render() {
     let dialog = (
