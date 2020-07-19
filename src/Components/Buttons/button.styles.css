@@ -6,11 +6,9 @@
   font-family: 'Orbitron', sans-serif;
   font-size: 2em;
   touch-action: manipulation;
-  position: relative;
   justify-items: center;
   height: 100px;
   width: 200px;
-  border-radius: 8px;
   opacity: 0.9;
   flex-grow: 1;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);

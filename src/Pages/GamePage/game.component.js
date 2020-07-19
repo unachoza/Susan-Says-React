@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'Components/Buttons/Button.component';
 import 'Components/Buttons/button.styles.css';
-import 'Pages/GamePage/game.styles.css'
+import 'Pages/GamePage/game.styles.css';
 
-const GamePage = ({ showScore, setCurrentButton , isDisabled, setIsDisabled}) => {
+const GamePage = ({ showScore, setCurrentButton, isDisabled, setIsDisabled, gameVisible, setGameVisible }) => {
   const [susansColors, setSusansColors] = useState([]);
   const [usersColors, setUserColors] = useState([]);
-  const [activeColor, setActiveColor] = useState(null)
-  
+  const [activeColor, setActiveColor] = useState(null);
+
   useEffect(() => {
     susanBlinks(susansColors);
   }, [susansColors]);
@@ -30,95 +30,94 @@ const GamePage = ({ showScore, setCurrentButton , isDisabled, setIsDisabled}) =>
   };
 
   const susanBlinks = (susansColors) => {
-    console.log(susansColors)
-      susansColors.forEach((color, i) =>
-        setTimeout(() => {
-          whichColorBlinks(color);
-        }, i * 500)
-      );
-  }
+    console.log(susansColors);
+    susansColors.forEach((color, i) =>
+      setTimeout(() => {
+        whichColorBlinks(color);
+      }, i * 500)
+    );
+  };
   const whichBlinks = {
-    0: "red",
-    1: "blue",
-    2: "green",
-    3: "purple"
-  }
+    0: 'red',
+    1: 'blue',
+    2: 'green',
+    3: 'purple',
+  };
 
   const whichColorBlinks = (color) => {
-  setActiveColor(whichBlinks[color])
-     setTimeout(() => {
-            setActiveColor(null);
-          }, 400);
-  }
+    setActiveColor(whichBlinks[color]);
+    setTimeout(() => {
+      setActiveColor(null);
+    }, 400);
+  };
 
-  const winOrLoseAfter = ((susan, user) => {
-    if (user.length === 0 && susan.length === 0) return
+  const winOrLoseAfter = (susan, user) => {
+    if (user.length === 0 && susan.length === 0) return;
     let loser = false;
     if (user.length === susan.length) {
-      setIsDisabled(true)
+      setIsDisabled(true);
       for (let i = 0; i < susan.length; i++) {
         if (susan[i] !== user[i]) {
           loser = true;
           showScore();
-          setCurrentButton('restart')
-          
+          setCurrentButton('restart');
         }
-      } 
+      }
       if (!loser) {
-        setCurrentButton('nextLevel')
-        setUserColors([])
+        setGameVisible(false);
+        setCurrentButton('nextLevel');
+        setUserColors([]);
       }
     }
-  });
- 
+  };
   return (
-    <div className="susan-container" >
-         <Button
-          className="color side"
-          id="purple"
-          value={3}
-          style={activeColor === "purple" ? { background: 'rgb(236, 24, 236)' } : null}
-          onClick={(e) => handleUserClickColorButtons(e)}
-          disabled={isDisabled}
-        >
-          Purple
-        </Button>
-        <Button
-          className="color top"
-          id="blue"
-          style={activeColor === "blue" ? { background: 'rgb(33, 187, 238)' } : null}
-          value={1}
-          onClick={(e) => handleUserClickColorButtons(e)}
-          disabled={isDisabled}
-        >
+    <div style={!gameVisible ? { visibility: 'hidden' } : null} className="susan-container">
+      <Button
+        className="color side"
+        id="purple"
+        value={3}
+        style={activeColor === 'purple' ? { background: 'rgb(236, 24, 236)' } : null}
+        onClick={(e) => handleUserClickColorButtons(e)}
+        disabled={isDisabled}
+      >
+        Purple
+      </Button>
+      <Button
+        className="color top"
+        id="blue"
+        style={activeColor === 'blue' ? { background: 'rgb(33, 187, 238)' } : null}
+        value={1}
+        onClick={(e) => handleUserClickColorButtons(e)}
+        disabled={isDisabled}
+      >
         Blue
-        </Button>
-        <Button
-          className="color side"
-          id="red"
-          style={activeColor === "red" ? { background: 'rgb(247, 50, 188)' } : null}
-          value={0}
-          onClick={(e) => handleUserClickColorButtons(e)}
-          disabled={isDisabled}
-        >
+      </Button>
+      <Button
+        className="color side"
+        id="red"
+        style={activeColor === 'red' ? { background: 'rgb(247, 50, 188)' } : null}
+        value={0}
+        onClick={(e) => handleUserClickColorButtons(e)}
+        disabled={isDisabled}
+      >
         Red
-        </Button>
+      </Button>
       {/* <br></br> */}
-       <Button className="color " id="go" value="go" onClick={() => handleGo()} disabled={isDisabled}>
+      <Button className="color " id="go" value="go" onClick={() => handleGo()} disabled={isDisabled}>
         Go
-        </Button>
+      </Button>
       <br></br>
-        <Button
-          className="color top"
-          id="green"
-          style={activeColor === "green" ? { background: 'rgb(132, 216, 7)' } : null}
-          value={2}
-          onClick={(e) => handleUserClickColorButtons(e)}
-          disabled={isDisabled}
-        >
-          Green
-        </Button>
-      </div>
+      <Button
+        className="color top"
+        id="green"
+        style={activeColor === 'green' ? { background: 'rgb(132, 216, 7)' } : null}
+        value={2}
+        onClick={(e) => handleUserClickColorButtons(e)}
+        disabled={isDisabled}
+      >
+        Green
+      </Button>
+    </div>
   );
 };
 

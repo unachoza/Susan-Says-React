@@ -13,11 +13,11 @@ const App = () => {
   const [curretPage, setCurrentPage] = useState('home');
   const [currentButton, setCurrentButton] = useState('play');
   const [isDisabled, setIsDisabled] = useState(false);
+  const [gameVisible, setGameVisible] = useState(true);
 
   // const [ladiesIndex, setLadiesIndex] = useState(0)
 
   const startGame = () => {
-    console.log('play this mothefulcking ame ');
     setCurrentPage('gamePage');
     setCurrentButton(null);
   };
@@ -28,19 +28,22 @@ const App = () => {
     ladiesIndex++;
     setIsDisabled(false);
     setCurrentButton(null);
+    setCurrentPage('gamePage');
+    setGameVisible(true);
   };
-  console.log(curretPage);
   return (
     <div className="app-container" style={{ backgroundImage: `url(${ladies[ladiesIndex].img})` }}>
       <div className="game-container">
-        {/* {curretPage === 'home' && <HomePage />} */}
+        //add the next level button thing here
         {curretPage === 'gamePage' && (
           <GamePage
             curretPage={curretPage}
+            setCurrentPage={setCurrentPage}
+            gameVisible={gameVisible}
+            setGameVisible={setGameVisible}
             setCurrentButton={setCurrentButton}
             showScore={showScore}
             startGame={startGame}
-            setCurrentPage={setCurrentPage}
             isDisabled={isDisabled}
             setIsDisabled={setIsDisabled}
           />
