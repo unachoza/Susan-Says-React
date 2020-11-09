@@ -19,7 +19,9 @@ const App = () => {
 
   const startGame = () => {
     setCurrentPage('gamePage');
+    setGameVisible(true);
     setCurrentButton(null);
+    return (ladiesIndex = 0);
   };
   const showScore = () => {
     setCurrentPage('scorePage');
@@ -34,7 +36,6 @@ const App = () => {
   return (
     <div className="app-container" style={{ backgroundImage: `url(${ladies[ladiesIndex].img})` }}>
       <div className="game-container">
-        //add the next level button thing here
         {curretPage === 'gamePage' && (
           <GamePage
             curretPage={curretPage}
