@@ -4,4 +4,4 @@ Interactive arcade style memory game built using React. Users repeat a color pat
 
 # Play the game here http://susans.surge.sh/
 
-![](https://res.cloudinary.com/dh41vh9dx/image/upload/v1583712685/ezgif.com-gif-maker.gif)
+![](https://res.cloudinary.com/dh41vh9dx/image/upload/v1596374106/susan-demo.gif)
