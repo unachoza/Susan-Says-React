@@ -13,22 +13,16 @@ const GamePage = ({ showScore, setCurrentButton, isDisabled, setIsDisabled, game
   }, [susansColors]);
 
   useEffect(() => {
-    winOrLoseAfter(susansColors, usersColors);
+    checkWinner(susansColors, usersColors);
   }, [usersColors]);
 
   const handleGo = () => {
-    addRandomColorToSequence();
+    addColorToSequence();
   };
-  const addRandomColorToSequence = () => {
+  const addColorToSequence = () => {
     let element = Math.floor(Math.random() * 4);
     setSusansColors([...susansColors, element]);
   };
-
-  const handleUserClickColorButtons = (e) => {
-    let value = e.target.value;
-    setUserColors([...usersColors, parseInt(value)]);
-  };
-
   const susanBlinks = (susansColors) => {
     console.log(susansColors);
     susansColors.forEach((color, i) =>
@@ -37,6 +31,7 @@ const GamePage = ({ showScore, setCurrentButton, isDisabled, setIsDisabled, game
       }, i * 500)
     );
   };
+
   const whichBlinks = {
     0: 'red',
     1: 'blue',
@@ -50,8 +45,12 @@ const GamePage = ({ showScore, setCurrentButton, isDisabled, setIsDisabled, game
       setActiveColor(null);
     }, 400);
   };
+  const handleUserClickColorButtons = (e) => {
+    let value = e.target.value;
+    setUserColors([...usersColors, parseInt(value)]);
+  };
 
-  const winOrLoseAfter = (susan, user) => {
+  const checkWinner = (susan, user) => {
     if (user.length === 0 && susan.length === 0) return;
     let loser = false;
     if (user.length === susan.length) {

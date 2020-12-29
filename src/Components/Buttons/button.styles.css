@@ -10,6 +10,7 @@
   height: 100px;
   width: 200px;
   opacity: 0.9;
+  cursor: pointer;
   flex-grow: 1;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
 }
@@ -154,7 +155,7 @@
     background-color: rgb(211, 30, 211);
   }
 }
-.theseButtons {
+.gameButtons {
   padding-top: 70vh;
   padding-left: 15vw;
   padding-bottom: 3vh;

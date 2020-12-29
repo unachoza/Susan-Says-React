@@ -15,8 +15,6 @@ const App = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [gameVisible, setGameVisible] = useState(true);
 
-  // const [ladiesIndex, setLadiesIndex] = useState(0)
-
   const startGame = () => {
     setCurrentPage('gamePage');
     setGameVisible(true);
@@ -50,7 +48,7 @@ const App = () => {
           />
         )}
         {curretPage === 'scorePage' && <ScorePage ladiesIndex={ladiesIndex} />}
-        <div className="theseButtons">
+        <div className="gameButtons">
           {currentButton === 'play' && (
             <Button className="button" onClick={startGame}>
               Play Game
