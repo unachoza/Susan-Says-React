@@ -14,23 +14,24 @@
   flex-grow: 1;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
 }
+
 #blue {
   position: relative;
   background: blue;
   z-index: 1;
-  /* top: 14.5%;
-  left: 18.5%; */
   transform: rotate(0deg);
   border-radius: 50px 50px 20px 20px;
-
   color: rgb(6, 6, 105);
 }
+
 #blue:focus {
   animation: grow 0.15s;
 }
+
 #blue:active {
   background: rgb(33, 187, 238);
 }
+
 #red {
   position: relative;
   z-index: 2;
@@ -42,45 +43,52 @@
   border-radius: 20px 20px 50px 50px;
   color: rgb(175, 5, 5);
 }
+
 #red:focus {
   animation: grow 0.15s;
 }
+
 #red:active {
   background: rgb(247, 50, 188);
 }
+
 #green {
   position: relative;
   z-index: 3;
   background: green;
-  /* top: 44.5vh; */
   left: 36%;
   transform: rotate(0deg);
   border-radius: 20px 20px 50px 50px;
   color: rgb(2, 83, 2);
 }
+
 #green:focus {
   animation: grow 0.15s;
 }
+
 #green:active {
   background: rgb(132, 216, 7);
 }
+
 #purple {
   position: relative;
   z-index: 4;
   background: purple;
-  /* left: 3vw; */
   top: 16%;
   transform: rotate(-90deg) translate(0, -100%);
   transform-origin: 100% 0;
   border-radius: 50px 50px 20px 20px;
   color: rgb(92, 2, 92);
 }
+
 #purple:focus {
   animation: grow 0.15s;
 }
+
 #purple:active {
   background: rgb(236, 24, 236);
 }
+
 #go {
   position: relative;
   z-index: 1;
@@ -93,9 +101,11 @@
   color: white;
   font-size: 3em;
 }
+
 #go:focus {
   animation: goGrow 0.2s;
 }
+
 #go:active {
   background: rgb(48, 45, 45);
 }
@@ -103,6 +113,7 @@
 .blink {
   animation: blink 0.5s;
 }
+
 @keyframes grow {
   from {
     height: 100px;
@@ -113,6 +124,7 @@
     width: 220px;
   }
 }
+
 @keyframes goGrow {
   from {
     height: 100px;
@@ -123,6 +135,7 @@
     width: 160px;
   }
 }
+
 @keyframes blinkBlue {
   from {
     background-color: blue;
@@ -131,6 +144,7 @@
     background-color: rgb(33, 187, 238);
   }
 }
+
 @keyframes blinkRed {
   from {
     background-color: red;
@@ -139,6 +153,7 @@
     background-color: rgb(247, 100, 203);
   }
 }
+
 @keyframes blinkGreen {
   from {
     background-color: green;
@@ -147,6 +162,7 @@
     background-color: rgb(132, 216, 7);
   }
 }
+
 @keyframes blinkPurple {
   from {
     background-color: purple;
@@ -155,6 +171,7 @@
     background-color: rgb(211, 30, 211);
   }
 }
+
 .gameButtons {
   padding-top: 70vh;
   padding-left: 15vw;

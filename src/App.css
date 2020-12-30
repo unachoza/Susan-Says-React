@@ -4,6 +4,3 @@
   background-size: cover;
   transition: background-image 0.7s ease-in-out;
 }
-.visible {
-  display: none;
-}
