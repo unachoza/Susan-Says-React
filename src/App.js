@@ -13,11 +13,12 @@ const App = () => {
   const [activeButton, setActiveButton] = useState('play');
   const [isDisabled, setIsDisabled] = useState(false);
   const [isGameVisible, setIsGameVisible] = useState(true);
-
+console.log({activeButton}, {activePage})
   const startGame = () => {
     setActivePage('gamePage');
     setIsGameVisible(true);
     setActiveButton(null);
+    setIsDisabled(false);
     return (ladiesIndex = 0);
   };
   const displayScore = () => {
@@ -35,7 +36,7 @@ const App = () => {
       <div className="game-container">
         {activePage === 'gamePage' && (
           <GamePage
-            curretPage={activePage}
+            currentPage={activePage}
             setCurrentPage={setActivePage}
             gameVisible={isGameVisible}
             setGameVisible={setIsGameVisible}
