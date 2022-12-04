@@ -17,6 +17,7 @@
 
 #blue {
   position: relative;
+  top: -2%;
   background: blue;
   z-index: 1;
   transform: rotate(0deg);
@@ -36,8 +37,8 @@
   position: relative;
   z-index: 2;
   background: red;
-  top: -16%;
-  left: 54.5%;
+  top: -19%;
+  left: 56%;
   transform: rotate(-90deg) translate(0, -100%);
   transform-origin: 100% 0;
   border-radius: 20px 20px 50px 50px;
@@ -57,6 +58,7 @@
   z-index: 3;
   background: green;
   left: 36%;
+  top: 2%;
   transform: rotate(0deg);
   border-radius: 20px 20px 50px 50px;
   color: rgb(2, 83, 2);
@@ -75,6 +77,7 @@
   z-index: 4;
   background: purple;
   top: 16%;
+  left: -2%;
   transform: rotate(-90deg) translate(0, -100%);
   transform-origin: 100% 0;
   border-radius: 50px 50px 20px 20px;
@@ -93,7 +96,7 @@
   position: relative;
   z-index: 1;
   background: black;
-  height: 100px;
+  height: 110px;
   width: 140px;
   border-radius: 45%;
   top: 1%;
@@ -120,8 +123,8 @@
     width: 200px;
   }
   to {
-    height: 115px;
-    width: 220px;
+    height: 105px;
+    width: 210px;
   }
 }
 
