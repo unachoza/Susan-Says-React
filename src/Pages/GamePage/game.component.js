@@ -19,10 +19,12 @@ const GamePage = ({ displayScore, setCurrentButton, isDisabled, setIsDisabled, g
   const handleOnClickGoButton = () => {
     addColorToSequence();
   };
+
   const addColorToSequence = () => {
     let element = Math.floor(Math.random() * 4);
     setSusansColors([...susansColors, element]);
   };
+
   const susanBlinks = (susansColors) => {
     susansColors.forEach((color, i) =>
       setTimeout(() => {
@@ -44,6 +46,7 @@ const GamePage = ({ displayScore, setCurrentButton, isDisabled, setIsDisabled, g
       setActiveColor(null);
     }, 400);
   };
+
   const handleOnClickColorButtons = (e) => {
     let value = e.target.value;
     setUserColors([...usersColors, parseInt(value)]);
@@ -64,6 +67,7 @@ const GamePage = ({ displayScore, setCurrentButton, isDisabled, setIsDisabled, g
       setUserColors([]);
     }
   };
+  
   return (
     <div style={!gameVisible ? { visibility: 'hidden' } : null} className="susan-container">
       <Button
