@@ -6,3 +6,25 @@
   left: 10%;
   display: block;
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .susan-container {
+    position: absolute;
+    height: 310px;
+    width: 550px;
+    top: 25%;
+    left: 10%;
+    display: block;
+    border: solid red
+  }
+}
+@media only screen and (min-device-width: 375px){
+  .susan-container {
+    position: static;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translate(-25%, -50%);
+  }
+}

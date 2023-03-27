@@ -3,7 +3,7 @@ import Button from 'Components/Buttons/Button.component';
 import 'Components/Buttons/button.styles.css';
 import 'Pages/GamePage/game.styles.css';
 
-const GamePage = ({ displayScore, setCurrentButton, isDisabled, setIsDisabled, gameVisible, setGameVisible }) => {
+const GamePage = ({ currentPage, setCurrentPage, displayScore, setCurrentButton, isDisabled, setIsDisabled, gameVisible, setGameVisible }) => {
   const [susansColors, setSusansColors] = useState([]);
   const [usersColors, setUserColors] = useState([]);
   const [activeColor, setActiveColor] = useState(null);
@@ -17,11 +17,16 @@ const GamePage = ({ displayScore, setCurrentButton, isDisabled, setIsDisabled, g
   }, [usersColors]);
 
   const handleOnClickGoButton = () => {
+    console.log('clicked go')
     addColorToSequence();
   };
 
   const addColorToSequence = () => {
+    console.log(
+'adding color'
+    )
     let element = Math.floor(Math.random() * 4);
+    console.log({susansColors})
     setSusansColors([...susansColors, element]);
   };
 
@@ -55,11 +60,16 @@ const GamePage = ({ displayScore, setCurrentButton, isDisabled, setIsDisabled, g
   const checkWinner = (susan, user) => {
     if (user.length === 0 && susan.length === 0) return;
     if (user.length === susan.length) {
+      console.log('same length')
       setIsDisabled(true);
       for (let i = 0; i < susan.length; i++) {
         if (susan[i] !== user[i]) {
+          console.log('wrong')
           displayScore();
           setCurrentButton('restart');
+          setCurrentPage('scorePage')
+          setSusansColors([])
+          return
         }
       }
       setGameVisible(false);
@@ -100,7 +110,6 @@ const GamePage = ({ displayScore, setCurrentButton, isDisabled, setIsDisabled, g
       >
         Red
       </Button>
-      {/* <br></br> */}
       <Button className="color " id="go" value="go" onClick={() => handleOnClickGoButton()} disabled={isDisabled}>
         Go
       </Button>
