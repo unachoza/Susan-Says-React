@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import GamePage from 'Pages/GamePage/game.component';
 import ScorePage from 'Pages/ScorePage/ScorePage.component';
 import Button from 'Components/Buttons/Button.component.js';
+import Footer from './Components/Footer/Footer.component';
 
 import 'Components/Buttons/button.styles.css';
 import ladies from 'Constants/lady.constants.js';
@@ -13,7 +14,7 @@ const App = () => {
   const [activeButton, setActiveButton] = useState('play');
   const [isDisabled, setIsDisabled] = useState(false);
   const [isGameVisible, setIsGameVisible] = useState(true);
-console.log({activeButton}, {activePage})
+
   const startGame = () => {
     setActivePage('gamePage');
     setIsGameVisible(true);
@@ -66,7 +67,7 @@ console.log({activeButton}, {activePage})
           )}
         </div>
       </div>
-      {/* <Footer ladiesIndex={ladiesIndex} /> */}
+      <Footer ladiesIndex={ladiesIndex} />
     </div>
   );
 };

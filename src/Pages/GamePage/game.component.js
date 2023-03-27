@@ -17,14 +17,10 @@ const GamePage = ({ currentPage, setCurrentPage, displayScore, setCurrentButton,
   }, [usersColors]);
 
   const handleOnClickGoButton = () => {
-    console.log('clicked go')
     addColorToSequence();
   };
 
   const addColorToSequence = () => {
-    console.log(
-'adding color'
-    )
     let element = Math.floor(Math.random() * 4);
     console.log({susansColors})
     setSusansColors([...susansColors, element]);
@@ -60,11 +56,9 @@ const GamePage = ({ currentPage, setCurrentPage, displayScore, setCurrentButton,
   const checkWinner = (susan, user) => {
     if (user.length === 0 && susan.length === 0) return;
     if (user.length === susan.length) {
-      console.log('same length')
       setIsDisabled(true);
       for (let i = 0; i < susan.length; i++) {
         if (susan[i] !== user[i]) {
-          console.log('wrong')
           displayScore();
           setCurrentButton('restart');
           setCurrentPage('scorePage')

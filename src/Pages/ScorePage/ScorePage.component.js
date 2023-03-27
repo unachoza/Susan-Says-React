@@ -7,9 +7,6 @@ const ScorePage = ({ ladiesIndex }) => {
   return (
     <div className="page">
       <Trivia ladiesIndex={ladiesIndex}/>
-      {/* <a href="https://www.linkedin.com/in/arianna-choza-37a44762/" target="blank">
-        created by arianna choza
-      </a> */}
     </div>
   );
 };
