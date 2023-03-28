@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Button from 'Components/Buttons/Button.component';
-import 'Components/Buttons/button.styles.css';
-import 'Pages/GamePage/game.styles.css';
+import Button from '../../Components/Buttons/Button.component';
+import '../../Components/Buttons/button.styles.css';
+import './game.styles.css';
 
 const GamePage = ({ currentPage, setCurrentPage, displayScore, setCurrentButton, isDisabled, setIsDisabled, gameVisible, setGameVisible }) => {
   const [susansColors, setSusansColors] = useState([]);

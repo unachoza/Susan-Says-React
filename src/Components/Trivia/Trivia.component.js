@@ -1,6 +1,6 @@
 import React from 'react';
-import ladies from 'Constants/lady.constants.js';
-import 'Components/Trivia/Trivia.styles.css';
+import ladies from '../../Constants/lady.constants.js';
+import './Trivia.styles.css';
 
 const Trivia = ({ ladiesIndex }) => (
   <div>

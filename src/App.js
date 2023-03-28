@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import GamePage from 'Pages/GamePage/game.component';
-import ScorePage from 'Pages/ScorePage/ScorePage.component';
-import Button from 'Components/Buttons/Button.component.js';
+import GamePage from './Pages/GamePage/game.component';
+import ScorePage from './Pages/ScorePage/ScorePage.component';
+import Button from './Components/Buttons/Button.component.js';
 import Footer from './Components/Footer/Footer.component';
 
-import 'Components/Buttons/button.styles.css';
-import ladies from 'Constants/lady.constants.js';
-import 'App.css';
+import './Components/Buttons/button.styles.css';
+import ladies from './Constants/lady.constants.js';
+import './App.css';
 let ladiesIndex = 0;
 
 const App = () => {
