@@ -9,12 +9,13 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "^5.0.1",
-    "react-share": "^4.2.0"
+    "react-share": "^4.2.0",
+    "serve": "^14.2.0"
   },
   "scripts": {
     "dev": "node -r dotenv/config bin/www.js",
     "build": "react-scripts build",
-    "start": "react-scripts start  \"NODE_PATH=./src\"",
+    "start": "react-scripts start",
     "test": "react-scripts test --watch *.js",
     "eject": "react-scripts eject"
   },
