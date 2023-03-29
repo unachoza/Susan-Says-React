@@ -1,16 +1,23 @@
 .ladys-name {
-  display: flex;
   background-color: rgba(128, 128, 128, 0.5);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 25px;
-  color: white;
-  padding: 25px;
+  padding: 20px;
   border-radius: 10px;
   border: solid;
+  white-space: nowrap;
+  margin: 0 10vh 7vw 0;
 }
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .ladys-name {
     display: none;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 900px) and (orientation: landscape) {
+  .ladys-name {
+    font-size: 20px;
+    padding: 10px;
+    margin: 20px;
   }
 }
