@@ -1,3 +1,6 @@
+.game-container {
+  width: 100%;
+}
 .susan-container {
   position: absolute;
   height: 310px;
@@ -14,11 +17,10 @@
     width: 550px;
     top: 25%;
     left: 10%;
-    display: block;
-    border: solid red
+    display: none;
   }
 }
-@media only screen and (min-device-width: 375px){
+@media only screen and (min-device-width: 375px) and (orientation: landscape) {
   .susan-container {
     position: static;
     margin: 0;

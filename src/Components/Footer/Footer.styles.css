@@ -1,12 +1,16 @@
 .ladys-name {
   display: flex;
   background-color: rgba(128, 128, 128, 0.5);
-  width: 499px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 25px;
   color: white;
-  margin: 0 20px;
   padding: 25px;
   border-radius: 10px;
   border: solid;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .ladys-name {
+    display: none;
+  }
 }

@@ -3,7 +3,7 @@
 }
 
 .color {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   font-size: 2em;
   touch-action: manipulation;
   justify-items: center;
@@ -188,8 +188,14 @@
   border: solid 1px black;
   background-color: #99a036;
   border-radius: 10px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
   padding: 10px;
   z-index: 1;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .gameButtons {
+    display: none;
+  }
 }

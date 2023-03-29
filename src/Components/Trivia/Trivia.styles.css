@@ -1,9 +1,15 @@
-h5{
-  font-family: 'Orbitron', sans-serif;
+h5 {
+  font-family: "Orbitron", sans-serif;
   font-size: 25px;
 }
-.facts-container{
+.facts-container {
   margin-top: 40px;
   line-height: 1.6;
   width: 28vw;
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+  .facts-container {
+    display: none;
+  }
 }
